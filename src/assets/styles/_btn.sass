@@ -1,0 +1,71 @@
+.btn
+	+flex(inline-flex, center, center, nowrap)
+	gap: $gap2
+	height: 50px
+	min-width: 200px
+	padding: $gap2 $gap3
+	border: 2px solid $main
+	+theme(main)
+	border-radius: 12pc
+	text-align: center
+	text-transform: initial
+	+ft(18, 18, 500)
+	transition: $trs
+	cursor: pointer
+	&:hover, &:focus, &:active
+		+theme(secondary)
+	&s
+		+flex(flex, center, start, nowrap)
+		gap: $gap2
+	&-top
+		opacity: 0
+		+ps(fixed, (r, 10px), (b, 10px))
+		&.show
+			opacity: 1
+
+.form
+	padding: 3em
+	border-radius: $brs2
+	+theme(white)
+	max-width: 600px
+	margin-left: auto
+	margin-right: auto
+	label
+		display: block
+		margin-bottom: 4px
+		text-align: left
+	input:not([type=checkbox]), button
+		display: block
+		width: 100%
+		padding: 12px 16px
+	button
+		margin-top: 30px
+	input
+		border: 1px solid $ctext2
+		&:focus, &:hover, &:active
+			border-color: $main
+	input[type=checkbox]
+		display: inline-flex
+		+sz(20px, 20px)
+		border-radius: 0
+		& + label
+			display: inline-flex
+			user-select: none
+			cursor: pointer
+	&_inline
+		+flex(flex, start, start, nowrap)
+		gap: $gap1
+	&_row
+		display: grid
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+		gap: 0px 20px
+	hr
+		margin: $gap4 0
+	&-error
+		color: $red
+		font-size: 12px
+	+maw($xs)
+		padding: 20px
+
+.input-block
+	margin: 10px 0

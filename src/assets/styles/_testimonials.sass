@@ -1,0 +1,29 @@
+
+.testimonials
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    gap: $gap3
+    +maw($xs)
+        grid-template-columns: 1fr
+
+.testimonial
+    +theme(light2)
+    border-radius: $brs2
+    text-align: center
+    width: 100%
+    margin: 0
+    margin-top: 50px
+    &_ava
+        +sz(100px, 100px)
+        border-radius: 50%
+        object-fit: cover
+        transform: translateY(-50px)
+        margin-bottom: -40px
+    &_comment
+        padding: 0 $gap2 $gap2
+        +ft(15, 15*1.4, 400)
+          
+    &_title
+        +ft(18, 18, 600)
+        color: $ctext1
+        margin-bottom: 4px

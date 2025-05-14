@@ -1,0 +1,124 @@
+.logo
+	img
+		width: auto 
+		height: 45px
+
+$menuHide: 960
+.header
+	+ps(sticky, (t, 0), (l, 0))
+	+theme(dark)
+	z-index: 100500
+	width: 100%
+	padding: 1em 0
+	&.show
+		+miw($menuHide)
+			+theme(dark)
+			border-bottom: 1px solid $main
+	.container
+		+flex(flex, center, space-between, nowrap)
+		gap: $gap2
+	+maw($sm)
+		.btn
+			display: none
+
+.drawer
+	+ps(fixed, (r, 0), (t, 0))
+	z-index: 100500
+	max-width: 280px
+	width: 100%
+	height: 100vh
+	+theme(dark)
+	padding: $gap3
+	// transform: translateX(100%)
+	// opacity: 0
+	transition: transform 0.2s linear
+	transform: none
+	opacity: 1
+	border-left: 1px solid $main
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	.divider
+		width: 100%
+		margin-bottom: $gap3
+		border-color: $main
+	&_menu
+		display: grid
+		gap: $gap2
+		margin-bottom: auto
+		a
+			transition: $trs
+			user-select: none
+			&:hover, &:focus, &:active
+				color: $main	
+
+	&_header
+		position: relative
+		+flex(flex, center, space-between, nowrap)
+		margin-bottom: $gap2
+		padding-bottom: $gap2
+		.logo img
+			height: 35px
+		.menu_toggle
+			padding: 0
+		
+
+	+miw($menuHide)
+		display: none
+
+
+.menu
+	+flex(flex, center, center, nowrap)
+	gap: $gap1 $gap3
+	a
+		transition: $trs
+		user-select: none
+		&:hover, &:focus, &:active
+			color: $main
+	&_toggle
+		background: none
+		color: inherit
+		+miw($menuHide)
+			display: none
+	+maw($menuHide)
+		display: none
+
+.footer
+	+theme(light2)
+	&_info
+		+maw($xs)
+			br
+				display: none
+	&_top
+		padding-top: $gap5
+		.container
+			+flex(flex, center, space-between, wrap)
+			gap: $gap1
+		&_nav
+			display: grid
+			grid-template-columns: repeat(2, 1fr)
+			gap: $gap2 3em
+			a
+				transition: $trs
+				&:hover, &:focus, &:active
+					color: $secondary
+					text-decoration: underline
+	&_mdl
+		padding-top: $gap1
+		padding-bottom: $gap3
+	&_btm
+		padding: $gap4 0 $gap5
+		border-top: 1px solid darken($light2, 15%)
+		p
+			margin: 0
+		.container
+			+flex(flex, center, space-between, wrap)
+			gap: $gap1
+		&_nav
+			+flex(flex, center, center, nowrap)
+			gap: $gap1
+			a
+				transition: $trs
+				&:hover, &:focus, &:active
+					color: $secondary
+					text-decoration: underline

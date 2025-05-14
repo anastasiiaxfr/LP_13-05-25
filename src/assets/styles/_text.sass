@@ -1,0 +1,115 @@
+h1, h2, h3, h4, h5, h6
+    font-family: $ffHeading, $ffBack
+    margin-bottom: $gap3
+    margin-top: 0
+
+
+h1, .h1
+    +ft(52, 52*1.2, 700)
+    margin-top: 0
+    margin-bottom: 0
+    +maw($lg)
+        +ft(46, 46*1.2, 700)
+    +maw($md)
+        +ft(40, 40*1.2, 700)
+    +maw($sm)
+        font-size: 26px
+        font-weight: 700
+    +maw($xxs)
+        font-size: 22px
+
+h2, .h2
+    +ft(38, 38*1.2, 600)
+    margin-bottom: $gap3
+    +maw($lg)
+        +ft(36, 36*1.2, 600)
+    +maw($md)
+        +ft(30, 30*1.2, 600)
+    +maw($sm)
+        +ft(23, 23*1.2, 600)
+    +maw($xxs)
+        font-size: 1.3em
+
+h3, .h3
+    +ft(30, 30*1.4, 600)
+    +maw($lg)
+        +ft(26, 26*1.4, 600)
+    +maw($md)
+        +ft(24, 24*1.4, 600)
+    +maw($sm)
+       font-size: 1.15em
+
+h4, .h4
+    +ft(24, 24*1.4, 600)
+    +maw($lg)
+        +ft(23, 23*1.4, 600)
+    +maw($md)
+        +ft(20, 20*1.4, 600)
+    +maw($sm)
+        +ft(18, 18*1.4, 600)
+    +maw($xxs)
+        font-size: 1em
+
+h5, .h5
+    +ft(20, 20*1.4, 600)
+    +maw($sm)
+        +ft(17, 17*1.4, 600)
+    +maw($xxs)
+        font-size: 0.9em
+
+h6, .h6
+    +ft(17, 17*1.4, 600)
+
+p, li
+    +ft(16, 16*1.4, 400)
+
+div
+    line-height: 1.4
+
+.label
+    display: inline-flex
+    margin-bottom: $gap2
+    padding: 8px 16px
+    border-radius: 16pc
+    +theme(light2)
+
+.labels
+    +flex(inline-flex, center, start, nowrap)
+    gap: 4px
+    padding: 4px
+    background: $white
+    border-radius: 16pc
+    margin-bottom: $gap2
+    .label
+        margin: 0
+        &.active
+            +theme(dark)
+            
+
+.text
+    margin-bottom: $gap4
+
+.list
+    padding: 0
+    margin: $gap3 0
+    li
+        position: relative
+        list-style-type: none
+        +flex(flex, center, start, nowrap)
+        gap: $gap2
+        margin: $gap2 0
+        +ft(18, 18*1.4, 400)
+        &::before
+            +flex(flex, center, center, nowrap)
+            content: ''
+            +sz(40px, 40px)
+            border-radius: 6px
+            background: $secondary url('../img/check.svg') no-repeat 50% / 50%
+
+.chip
+    display: inline-flex
+    padding: 8px 16px
+    font-weight: 600
+    margin-bottom: $gap2
+    border: 2px solid $white
+    border-radius: 16pc

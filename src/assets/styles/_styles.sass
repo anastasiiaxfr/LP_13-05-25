@@ -1,0 +1,88 @@
+body
+	background-repeat: no-repeat
+	background-size: cover
+	background-position: top right
+	background-color: $light
+	color: $ctext2
+	font-family: $ffText, $ffBack
+	h1, h2, h3, h4
+		color: $ctext1
+
+a
+	font-family: inherit
+	&:hover, &:focus, &:active, &:focus-visible
+		outline: none
+		appearance: none
+		box-shadow: none
+
+.bg
+	+theme(dark)
+	padding: var(--gapSection) 0
+
+.section
+	padding: var(--gapSection) 0
+	&_form
+		background: $dark url('../img/bg/bg1.jpg') no-repeat 50%/cover
+		color: $white
+		h2
+			color: $white
+		p
+			opacity: 0.5
+	&_2
+		+theme(dark)
+		h2
+			color: $white
+		p
+			opacity: 0.5
+	&_hero
+		h1
+			color: $white
+		p
+			opacity: 0.5
+	&_brands
+		padding-bottom:  var(--gapSection)
+
+.row_1, .row_2, .row_3, .row_4
+	display: grid
+	grid-template-columns: repeat(2, 1fr)
+	gap: var(--gapSection)
+	align-items: center
+	+maw($md)
+		grid-template-columns: 1fr
+.row_2, .row_4
+	grid-template-columns: 1fr auto
+	+maw($md)
+		grid-template-columns: 1fr
+.row_3
+	grid-template-columns: auto 1fr
+	+maw($md)
+		grid-template-columns: 1fr
+
+.brands
+	width: 100%
+	margin-top: $gap4
+	+flex(flex, center, space-between, wrap)
+	gap: $gap3
+	+maw($sm)
+		justify-content: start
+
+.contacts	
+	display: grid
+	grid-template-columns: 1fr 1px 1fr 1px 1fr
+	margin-top: $gap4
+	gap: $gap1
+	address, a
+		font-style: normal
+	p
+		margin-bottom: 4px
+		b
+			font-weight: 700
+	hr
+		margin: 0
+		border: none
+		border-right: 1px dashed $main
+		+sz(1px, 100%)
+	+maw($sm)
+		grid-template-columns: 1fr 
+		hr 
+			display: none

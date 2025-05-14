@@ -1,0 +1,37 @@
+
+.quiz
+    padding: var(--gap10)
+    border-radius: $brs2
+    background: $dark url('../img/bg/bg2.jpg') no-repeat 50%/cover
+    text-align: center
+    h2
+        color: $white
+    &_inner
+        max-width: 700px
+        margin-left: auto
+        margin-right: auto
+    &_progress
+        +sz(100%, 6px)
+        margin: $gap4 auto
+        background: rgba($white, 0.2)
+        border-radius: 16pc
+        b
+            display: block
+            height: 6px
+            background: $main
+            border-radius: 16pc
+    &_answers
+        +flex(flex, center, center, wrap)
+        gap: $gap2
+        margin: $gap4 auto
+        button
+            min-width: 200px
+            padding: 16px 16px
+            border-radius: $brs
+            background: none
+            border: 2px solid $main
+            color: $white
+            +ft(18, 18, 700)
+            transition: $trs
+            &:hover, &:active, &:focus
+                +theme(main)
